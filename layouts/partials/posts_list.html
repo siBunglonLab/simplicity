@@ -4,11 +4,23 @@
   {{ else }}
     {{ i18n "postsAbout" }} {{ .Title }}
   {{ end }}
-  <small>
+  <!-- <small>
     - <a href="{{ .RSSLink | relURL }}" class="rss" title="RSS">RSS</a>
-  </small>
+  </small> -->
+  <script>
+    (function() {
+      var cx = '010859980265561668253:i9rpftg82dm';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+  <gcse:search></gcse:search>
 </h2>
-<hr>
+<!-- <hr> -->
 {{ range (where .Data.Pages "Type" "posts").GroupByDate "2006" }}
   <h3 id="{{ .Key }}">
     {{ .Key }}
