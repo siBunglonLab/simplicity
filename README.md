@@ -122,7 +122,7 @@ Copy `config.toml` from `exampleSite` to the root directory of your Hugo site an
 
 ### favicons
 
-This theme contains default favicon with `S` letter. If you want to change it, create a directory `static/assets/img` inside the root of your Hugo site and put your favicon files there. They should have names: `favicon.ico` and `apple-touch-icon.png`.
+This theme contains default favicon with `S` letter. If you want to change it, create a directory `assets/src/images` inside the root of your Hugo site and put your favicon files there. They should have names: `favicon.ico` and `apple-touch-icon.png`.
 
 ## Shortcodes
 
@@ -154,6 +154,10 @@ Full page width image:
 Lightbox:
 
 `{{< image src="media/image-1.jpg" lightbox="true" >}}`
+
+Rounded corners:
+
+`{{< image src="media/image-1.jpg" round="50" >}}`
 
 Insert image without resizing (the same image for all devices/resolutions).
 
