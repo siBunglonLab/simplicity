@@ -1,4 +1,5 @@
 <head>
+  <!-- meta Begin -->
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{- .Title }}</title>
@@ -6,9 +7,13 @@
   <meta name="author" content="Shell, Linux, Komunitas Pengguna Linux Indonesia , MikroTik, MikroTik Indonesia, FreeBSD, FreeBSD Indonesia, KPLK Klaten, BLC Telkom Klaten, Icar, siBunglonGanteng, siBunglonLabs">
   <meta name="description" content="{{ .Site.Params.description }}">
   <meta name="description" content="Shell, Linux, Komunitas Pengguna Linux Indonesia , MikroTik, MikroTik Indonesia, FreeBSD, FreeBSD Indonesia, KPLK Klaten, BLC Telkom Klaten, Icar, siBunglonGanteng, siBunglonLabs">
-  <!-- google-site-verification -->
+  <!-- meta End -->
+  
+  <!-- google-site-verification Begin -->
   <meta name="google-site-verification" content="SYE8MCa03gDSATy55M-WppXlauxSYqxjOE9Tg7vEJpM" />
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- google-site-verification End -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics Begin -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110194945-3"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -17,7 +22,9 @@
 
     gtag('config', 'UA-110194945-3');
   </script>
-  <!-- Histats.com  START  (aync)-->
+  <!-- Global site tag (gtag.js) - Google Analytics End -->
+
+  <!-- Histats.com Begin -->
   <script type="text/javascript">var _Hasync= _Hasync|| [];
   _Hasync.push(['Histats.start', '1,4194642,4,0,0,0,00010000']);
   _Hasync.push(['Histats.fasi', '1']);
@@ -28,30 +35,30 @@
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
   })();</script>
   <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4194642&101" alt="" border="0"></a></noscript>
-  <!-- Histats.com  END  -->
+  <!-- Histats.com END -->
 
   {{ .Hugo.Generator }}
 
-  <!-- CSS -->
+  <!-- CSS Begin -->
   {{ $normalize := resources.Get "/src/styles/_external/normalize.css" }}
   {{ $milligram := resources.Get "/src/styles/_external/milligram.css" }}
   {{ $baguetteBox := resources.Get "/src/styles/_external/baguetteBox.css" }}
   {{ $external := slice $normalize $milligram $baguetteBox | resources.Concat "assets/css/external.css" | resources.Minify }}
   <link rel="stylesheet" href="{{ $external.RelPermalink }}" media="screen">
-
   {{ $options := (dict "targetPath" "assets/css/styles.css" "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "assets/node_modules")) }}
   {{ $styles := resources.Get "/src/styles/styles.scss" | resources.ToCSS $options }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen">
-
   <link href="//fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet">
+  <!-- CSS End -->
 
-  <!-- Icons -->
+  <!-- Icons Begin -->
   {{ $touchicon := resources.Get "/src/images/apple-touch-icon.png" }}
   {{ $favicon := resources.Get "/src/images/favicon.ico" }}
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ $touchicon.RelPermalink }}">
   <link rel="shortcut icon" href="{{ $favicon.RelPermalink }}">
+  <!-- Icons End -->
 
-  <!-- RSS -->
+  <!-- RSS Begin -->
   <link href="{{ $.LanguagePrefix }}{{ "/posts/index.xml" | relURL }}" rel="alternate" type="application/rss+xml" title="{{- .Site.Title -}}" />
   <link href="{{ $.LanguagePrefix }}{{ "/posts/index.xml" | relURL }}" rel="alternate" type="application/rss+xml" title="{{- .Site.Title -}}" />
 
@@ -59,7 +66,9 @@
   {{ template "_internal/google_news.html" . }}
   {{ template "_internal/schema.html" . }}
   {{ template "_internal/twitter_cards.html" . }}
+  <!-- RSS End -->
 
-  <!-- Fontawesome -->
+  <!-- Fontawesome Begin -->
   <script src="https://kit.fontawesome.com/749688b2db.js" crossorigin="anonymous"></script>
+  <!-- Fontawesone End -->
 </head>
