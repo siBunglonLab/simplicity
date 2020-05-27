@@ -1,5 +1,6 @@
 <head>
   <!-- meta Begin -->
+  <meta http-equiv="cache-control" content="public, max-age=31536000" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{- .Title }}</title>
@@ -31,10 +32,10 @@
   _Hasync.push(['Histats.track_hits', '']);
   (function() {
   var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
-  hs.src = ('//s10.histats.com/js15_as.js');
+  hs.src = ('https://s10.histats.com/js15_as.js');
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
   })();</script>
-  <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4194642&101" alt="" border="0"></a></noscript>
+  <noscript><a href="/" target="_blank"><img  src="https://sstatic1.histats.com/0.gif?4194642&101" alt="" border="0"></a></noscript>
   <!-- Histats.com END -->
 
   {{ .Hugo.Generator }}
@@ -48,7 +49,7 @@
   {{ $options := (dict "targetPath" "assets/css/styles.css" "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "assets/node_modules")) }}
   {{ $styles := resources.Get "/src/styles/styles.scss" | resources.ToCSS $options }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400&display=swap" rel="stylesheet">
   <!-- CSS End -->
 
   <!-- Icons Begin -->
