@@ -4,6 +4,7 @@
   {{ else }}
   {{ i18n "postsAbout" }} {{ .Title }}
   {{ end }}
+<!-- begin GCE -->
   <script>
     (function() {
       var cx = '010859980265561668253:a7fcuhwyjzl';
@@ -17,7 +18,23 @@
   </script>
   <gcse:search></gcse:search>
 </h2>
-<!-- <hr> -->
+<!-- end GCE -->
+
+{{ range (where .Data.Pages "Type" "x-mosque").GroupByDate "2006" }}
+<h3 id="{{ .Key }}">
+  {{ .Key }}
+</h3>
+<ul class="posts-list">
+  {{ range .Pages }}
+  <li>
+    <span class="date">{{ .Date.Format "January 2, 2006" }}</span>
+    <a href="{{ .RelPermalink | relURL }}" title="{{ .Title }}">{{ .Title }}</a>
+    {{ if .Site.Params.displayPostLanguage }}<span class="lang">/ {{ .Params.language }}</span>{{ end }}
+  </li>
+  {{ end }}
+</ul>
+{{ end }}
+
 {{ range (where .Data.Pages "Type" "posts").GroupByDate "2006" }}
 <h3 id="{{ .Key }}">
   {{ .Key }}
