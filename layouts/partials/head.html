@@ -33,7 +33,7 @@
   {{ $options := (dict "targetPath" "assets/css/styles.css" "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "assets/node_modules")) }}
   {{ $styles := resources.Get "/src/styles/styles.scss" | resources.ToCSS $options }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400&display=swap" rel="stylesheet">
+  <link href="/assets/custom/googlefonts/roboto.css" rel="stylesheet">
   <!-- CSS End -->
 
   <!-- Icons Begin -->
@@ -52,6 +52,7 @@
   <!-- RSS End -->
 
   <!-- Fontawesome Begin -->
-  <script src="https://kit.fontawesome.com/749688b2db.js" crossorigin="anonymous"></script>
+  <link href="/assets/custom/fontawesome-5.15.1/css/all.min.css" rel="stylesheet">
+  <script defer src="/assets/custom/fontawesome-5.15.1/js/all.min.js"></script>
   <!-- Fontawesone End -->
 </head>
