@@ -14,14 +14,16 @@
   <!-- google-site-verification End -->
   
   <!-- Global site tag (gtag.js) - Google Analytics Begin -->
+  {{ if not .Site.IsServer }}
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110194945-3"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'UA-110194945-3');
+    gtag('config', '{{ .Site.GoogleAnalytics }}');
   </script>
+  {{ end }}
   <!-- Global site tag (gtag.js) - Google Analytics End -->
 
   <!-- CSS Begin -->
@@ -33,7 +35,7 @@
   {{ $options := (dict "targetPath" "assets/css/styles.css" "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "assets/node_modules")) }}
   {{ $styles := resources.Get "/src/styles/styles.scss" | resources.ToCSS $options }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen">
-  <link href="/assets/custom/googlefonts/roboto.css" rel="stylesheet">
+  <link src="/assets/custom/googlefonts/roboto.css" rel="stylesheet">
   <!-- CSS End -->
 
   <!-- Icons Begin -->
@@ -52,6 +54,10 @@
   <!-- RSS End -->
 
   <!-- Fontawesome Begin -->
+  {{ if eq (printf "%v" $.Site.BaseURL) "http://localhost:1313/" }}
+  <script defer src="https://sibunglon.com/assets/custom/fontawesome-5.15.1/js/all.min.js"></script>
+  {{ else }}
   <script defer src="/assets/custom/fontawesome-5.15.1/js/all.min.js"></script>
+  {{ end }}
   <!-- Fontawesone End -->
 </head>
