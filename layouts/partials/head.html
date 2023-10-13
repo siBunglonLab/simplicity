@@ -24,22 +24,14 @@
   
   <!-- Global site tag (gtag.js) - Google Analytics Begin -->
   {{ if not .Site.IsServer }}
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110194945-3"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.GoogleAnalytics }}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', '{{ .Site.GoogleAnalytics }}');
-  </script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L0K35LHNTF"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-L0K35LHNTF');
   </script>
   {{ end }}
   <!-- Global site tag (gtag.js) - Google Analytics End -->
