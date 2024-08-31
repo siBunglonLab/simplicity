@@ -34,7 +34,6 @@ title = "Simplicity - Hugo theme"
   page = ["HTML"]
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
-  taxonomyTerm = ["HTML"]
 [params]
   adsenseClient = ''
   adsenseSlot = ''

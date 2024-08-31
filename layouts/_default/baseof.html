@@ -18,15 +18,15 @@
     {{ $main := resources.Get "/src/scripts/main.js" }}
     {{ $scripts := slice $baguetteBox $headroom $lazyload $main | resources.Concat "assets/js/scripts.js" | resources.Minify }}
     <script src="{{ $scripts.RelPermalink }}"></script>
-    {{ if not .Site.IsServer }}
+    {{ if not hugo.IsServer }}
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.GoogleAnalytics }}"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Config.Services.GoogleAnalytics.ID }}"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', '{{ .Site.GoogleAnalytics }}');
+      gtag('config', '{{ .Site.Config.Services.GoogleAnalytics.ID }}');
     </script>
     {{ end }}
   </body>
